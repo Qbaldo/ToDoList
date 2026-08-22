@@ -42,18 +42,22 @@
             {% endfor %}
           </p>
           <div>
-            <a href="#" class="btn btn-sm btn-outline-primary">
+            <a href="{% url 'tasks:task-update' task.pk %}"
+               class="btn btn-sm btn-outline-primary">
               Update
             </a>
-            <a href="#" class="btn btn-sm btn-outline-danger">
+            <a href="{% url 'tasks:task-delete' task.pk %}"
+               class="btn btn-sm btn-outline-danger">
               Delete
             </a>
             {% if task.is_done %}
-              <a href="#" class="btn btn-sm btn-outline-warning">
+              <a href="{% url 'tasks:task-toggle' task.pk %}"
+                 class="btn btn-sm btn-outline-warning">
                 Undo
               </a>
             {% else %}
-              <a href="#" class="btn btn-sm btn-outline-success">
+              <a href="{% url 'tasks:task-toggle' task.pk %}"
+                 class="btn btn-sm btn-outline-success">
                 Complete
               </a>
             {% endif %}
