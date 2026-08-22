@@ -12,7 +12,9 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Actions</th>
+          <th>Update</th>
+          <th>Delete</th>
+
         </tr>
       </thead>
       <tbody>
@@ -24,6 +26,8 @@
                  class="btn btn-sm btn-outline-primary">
                 Update
               </a>
+            </td>
+            <td>
               <a href="{% url 'tasks:tag-delete' tag.pk %}"
                  class="btn btn-sm btn-outline-danger">
                 Delete

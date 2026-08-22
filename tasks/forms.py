@@ -8,8 +8,23 @@ class TaskForm(forms.ModelForm):
         model = Task
         fields = ["content", "deadline", "tags"]
         widgets = {
+            "content": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "rows": 5,
+                }
+            ),
             "deadline": forms.DateTimeInput(
-                attrs={"type": "datetime-local"}
+                attrs={
+                    "class": "form-control",
+                    "type": "datetime-local",
+                }
+            ),
+            "tags": forms.SelectMultiple(
+                attrs={
+                    "class": "form-select",
+                    "size": 4,
+                }
             ),
         }
 
